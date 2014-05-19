@@ -1,0 +1,230 @@
+/*
+Theme Name: 		SubtlePatterns6
+Description: 		SubtlePatterns.com Centered
+Version: 			1.0.0
+Author: 			nononono
+
+Author URI:			http://atlemo.com/
+Theme URI:			http://tweaker.co.za/tweaker2/
+-------------------------------------------------------------- */
+@import "bootstrap";
+
+body {
+	width: 100%;
+	font-size: 13px;
+	font-family: 'Open Sans', "Lucida Grande", "segoe UI", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", Meiryo, Arial, sans-serif;
+	color: #777777;
+	background-image: url("transp_bg.png");
+	background-attachment: fixed;
+	font-weight: 400;
+	line-height:18px;
+	-webkit-font-smoothing: antialiased;	
+}
+
+/* TOP MENU */
+
+header{
+	top: 0;
+	border-top: #53bf6b 4px solid;
+	margin-left: 0;
+	margin-bottom: 130px;
+	background-color: rgba(255,255,255,0.9);
+	height:65px;
+	border-bottom: solid 1px #eaeaea;
+	position: fixed;
+	width: 100%;
+	z-index: 500;
+}
+
+.menu{
+	border-bottom: solid #eaeaea 1px;
+	border-left: solid #eaeaea 1px;
+	border-right: solid #eaeaea 1px;
+	width: 100%;
+	height: 61px;
+	background-color: rgba(255,255,255,0.9);
+	list-style: none;
+	overflow: hidden;
+	padding: 0;
+}
+
+.menu li{
+	letter-spacing:1px;
+	height: 100%;
+	float: left;
+	text-align: center;
+}
+
+
+.menu .toplogo {
+	display: block;
+	float: left;
+	background-color: #53bf6b;
+	height: 61px;
+	width: 90px;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAmCAMAAACWCLnmAAAABGdBTUEAALGPC/xhBQAAAWJQTFRFGXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+GXY+AAAAGXY+WOiKFAAAAHV0Uk5TY8sKKO8nvb713qZvIUCc1k0eEDOoeuBaIqp90HGDxmpCT0dR8xmI6kG5Ngxc2YuWn37N8Lgw4gtDUB/2ZBSiEXvsLdFoDhrDkP7KCWLuVQXmt3eyGAEdxCQ7XePrpNIvDaxpPIp1sBXdl/KESPr4/AMH/QIA/emsjQAAAWRJREFUOMuFlNVywzAQRVVmZmZm5qbcMGMbapgd2v9v6liGeKPug+2Ze2Zt60hLquwyGPWECXRoTQAMxGLu1AEwEPeCFeqFI5VcggNgIMl4CmSlRnyBAgADCUdeobEUSCidAWAgpS8PYGWiiDfmRwG90cAjxZvzMpZ3D47V0hqyMfuNNhjqG+VfQJZ/8lien9l2Cd9A0AaXT076FyNZBCnbVoqiCAcHKsQfmxZF2Hv4dVECnv0SBaK9ggg5kkmHaP6+FJRWV3wKRsIUuEivywXUb4VAVBKx2ODo75KyJyngPXxWaQTOkasIeXFtBxFBsre0wccJLoKadl03ETE+UEc08wdog8kJJ2+6unt8h+Vl2zAvglzdn6INtjb7qekzFPicEkWgmyFz9CLf9Gpk7m1PeXAakMKjT3X2FEgq/oCcXwnhEqsVdAZQxJp1NxsjPKLrMluaj6Ia0q5tY04z0kJa/5mIv2KHLPb9Mdz1AAAAAElFTkSuQmCC");
+	background-repeat: no-repeat;  
+	background-position:28px 14px; 
+}
+
+
+.menu li a{
+	display: block;
+	font-weight: 400;
+	font-size: 16px;
+	border-right: solid #eaeaea 1px;
+	border-bottom: none;
+	display:block;
+	height: 100%;
+	width: 150px;
+	padding: 20px 0;
+	color: #999;
+	text-decoration: none;
+}
+.menu a:hover {
+	border-bottom: 0;
+	color: #333 !important;
+}
+
+
+.menu li a.active {
+	color: #999 !important;
+}
+
+.menu li.current_page_item a{
+	color: green !important;
+}
+
+#submenu {	
+	display: block;
+	float: right;
+	border-left: 1px solid #eaeaea;
+	margin-top: 0px;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 16px;
+	padding-bottom: 12px;
+	background-color: inherit;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAYCAMAAAA4a6b0AAAABGdBTUEAALGPC/xhBQAAAJBQTFRFzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMAAAAzMzMUcf7QQAAAC90Uk5T8HOlUYhWipPXU1Ly2S7zEDQLVZBcVKv6puOSBy/cHN/gAwysW5Hb+DDkOPkGiQDShpO+AAAA1klEQVQoz3WR6RKCMAyE630rhwgCyn235f3fzoQCLYr7g8nONymbhHAU3ThBc907BuWjCH5WedsrP6okYq0iFkkyAYBGYqFtsjqO66zB2uoJfYKpSuHKCo2IQVLsKIff+gXYuyAPKF2Z1QWbCBJCWUtSgw0FwXZlPg8fF+Q0JbEk57+vYYJMkkwmwNSFP4CLknoyqY+TEq/fjtFtx9R0XTMbZXOw0W37LTZcYTeLussd5OWWIyLi2mkS2HaQpHS4FuuJKoFet1/Sodd7pofzNYJZwhcA+AduxGVdgxx/1wAAAABJRU5ErkJggg==");
+	background-repeat: no-repeat;  
+	background-position:180px 22px; 
+	margin-right: 0px;
+
+}
+
+#submenu #topSearch,
+#submenu .viewer-toggle-nav
+{
+	float:right;
+}
+
+/* =Forms
+---------------------------------------------------------- */
+
+.search
+{
+	margin-top:0;
+}
+
+.searchsubmit{
+	width: 50px;
+	height: 37px;
+	cursor:pointer;
+	float:left;
+	padding:0;
+	border:0 !important;
+	margin:0;
+	color:#fff
+
+}
+
+#searchsubmit-1{
+	border-radius: 0;
+}
+
+.searchtext{
+	border-radius: 0;
+}
+
+
+input[type="file"] {
+	border: 0;
+
+}
+
+
+
+.input[type=button] {
+	width: 92px;
+	height: 26px;
+	border:0;
+}
+
+.search input[type=text]{
+	clear:left;
+	color: #999;
+	font-weight: 400;
+	font-family: 'Open Sans', "Lucida Grande", "segoe UI", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", Meiryo, Arial, sans-serif;
+	font-size: 16px;
+	width:210px;
+	height: 32px;
+	float:left;
+	padding: 0px 0 0 14px;
+	background-color: inherit;
+	border:0;
+	margin:0;
+}
+.search input[type=submit]{
+	display: none;
+	cursor:pointer;
+	float:right;
+	position:relative;
+	padding:0;
+	margin:0;
+	color:#333;
+	font-family: 'Open Sans', "Lucida Grande", "segoe UI", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", Meiryo, Arial, sans-serif;
+	font-size: 16px;
+	width:50px;
+	height:34px;
+	background-color: #f1f1f1;
+	border: 1px solid red;
+
+
+}
+
+/* =Article
+---------------------------------------------------------- */
+Article{
+	overflow: hidden;
+	margin-top: 130px;
+}
+
+#main{
+	padding-left: 50px;
+	padding-right: 50px;
+}
+/* =filtermenu
+---------------------------------------------------------- */
+
+
+.cb-enable, .cb-disable, .cb-enable span, .cb-disable span {
+	 background: url(switch.gif) repeat-x; display: block; float: left;
+	}
+.cb-enable span, .cb-disable span { line-height: 30px; display: block; background-repeat: no-repeat; font-weight: bold; }
+.cb-enable span { background-position: left -90px; padding: 0 10px; }
+.cb-disable span { background-position: right -180px;padding: 0 10px; }
+.cb-disable.selected { background-position: 0 -30px; }
+.cb-disable.selected span { background-position: right -210px; color: #fff; }
+.cb-enable.selected { background-position: 0 -60px; }
+.cb-enable.selected span { background-position: left -150px; color: #fff; }
+.switch label { cursor: pointer; }
+.switch input { display: none; }
+
+/* =extra
+---------------------------------------------------------- */
+*:before, *:after {
+    box-sizing: border-box;
+}
+*:before, *:after {
+    box-sizing: border-box;
+}
