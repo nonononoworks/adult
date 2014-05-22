@@ -41,14 +41,12 @@
 .dopt-accordion label.title-panel span {
     -moz-box-shadow: inset 0em 1px #fff, inset 0em 0em 0em 1px rgba(255, 255, 255, 0.2);
     -moz-transition: all 0.2s ease-in-out;
-    -ms-filter: "progid: DXImageTransform.Microsoft.gradient( startColorstr=' #fbfbfb', endColorstr=' #ededed', GradientType=0)";
     -webkit-box-shadow: inset 0em 1px #fff, inset 0em 0em 0em 1px rgba(255, 255, 255, 0.2);
     -webkit-transition: all 0.2s ease-in-out;
     background-color: #f4f4f4;
     background-image: linear-gradient(to bottom, #fbfbfb, #ededed);
     box-shadow: inset 0em 1px #fff, inset 0em 0em 0em 1px rgba(255, 255, 255, 0.2);
     display: block;
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=' #fbfbfb', endColorstr=' #ededed', GradientType=0);
     line-height: 28px;
     margin-top: -1px;
     padding: 10px 12px;
@@ -70,19 +68,15 @@
 .dopt-accordion input.title-option:checked+label.title-panel span,
 .dopt-accordion input.title-option:checked+label.title-panel span:hover {
     -moz-box-shadow: inset 0em 1px rgba(255, 255, 255, 0.5), inset 0em 0em 0em 1px rgba(255, 255, 255, 0.3), 0em 1px 1px rgba(0, 0, 0, 0.05);
-    -ms-filter: "progid: DXImageTransform.Microsoft.gradient( startColorstr=' #f4f6fc', endColorstr=' #e2e6f8', GradientType=0)";
     -webkit-box-shadow: inset 0em 1px rgba(255, 255, 255, 0.5), inset 0em 0em 0em 1px rgba(255, 255, 255, 0.3), 0em 1px 1px rgba(0, 0, 0, 0.05);
     background-image: linear-gradient(to bottom, #f4f6fc, #e2e6f8);
     background: #edf0fb;
     box-shadow: inset 0em 1px rgba(255, 255, 255, 0.5), inset 0em 0em 0em 1px rgba(255, 255, 255, 0.3), 0em 1px 1px rgba(0, 0, 0, 0.05);
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=' #f4f6fc', endColorstr=' #e2e6f8', GradientType=0);
     text-shadow: 0em 1px rgba(255, 255, 255, 0.5);
 }
 .dopt-accordion label.title-panel span:hover {
-    -ms-filter: "progid: DXImageTransform.Microsoft.gradient( startColorstr=' #eaeaea', endColorstr=' #fff', GradientType=0)";
     background-image: -webkit-linear-gradient(top, #eaeaea 1%, #fff 100%);
     background: linear-gradient(top, #eaeaea 1%, #fff 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=' #eaeaea', endColorstr=' #fff', GradientType=0);
 }
 .dopt-accordion .accordion-content {
     -moz-transition: height 1s;
