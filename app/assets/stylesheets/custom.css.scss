@@ -24,6 +24,7 @@ body {
 /* TOP MENU */
 
 header{
+	overflow:hidden;
 	top: 0;
 	border-top: #6699FF 4px solid;
 	margin-left: 0;
@@ -124,7 +125,7 @@ header{
 	font-size: 28px;
 }
 
-#submenu {	
+#submenu {
 	display: block;
 	float: right;
 	border-left: 1px solid #eaeaea;

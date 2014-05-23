@@ -8,6 +8,8 @@ gem 'bootstrap-sass', '3.1.1.1'
 gem 'sprockets', '2.11.0'
 gem 'bcrypt-ruby', '3.1.2'
 gem 'faker', '1.1.2'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 # test fails without this
 gem 'minitest'

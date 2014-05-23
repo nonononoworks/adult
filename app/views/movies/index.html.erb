@@ -2,473 +2,67 @@
 			<div id ="main" class="container">
 
 				<div id="filter">
+	                <ul class="dopt-accordion light-theme arrow-tri">
+		                <li><input class="title-option" id="accx1" name="accordion-2" type="checkbox"><label class="title-panel" for="accx1" onclick="">
+		                        <span>
+		                            <i class="icon-tasks"></i>Settings</span></label>
+		                    <div class="accordion-content">
+		                        <div class="wrap-content">
+									<h3>Filter</h3>
+									<div id="filtermenu" class="row">
+										<ul>
+											<li class="filter-site">
+												<img class="share-site" src="/assets/logo_xvideos.png" alt="xvideos">
+												<div class="switch-container">
+													<label class="switch">
+														<input type="checkbox" class="switch-input" checked>
+														<span class="switch-label" data-on="On" data-off="Off"></span>
+														<span class="switch-handle"></span>
+													</label>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<h3>Sort</h3>
+									<div id="sortmenu">
+										<h1>動画のソート</h1>
+									</div>
+		                        </div>
+		                    </div>
+		                </li>
+	            	</ul>
+				</div>
 
-                <ul class="dopt-accordion light-theme arrow-tri">
-                <li><input class="title-option" id="accx1" name="accordion-2" type="checkbox"><label class="title-panel" for="accx1" onclick="">
-                        <span>
-                            <i class="icon-tasks"></i>Settings</span></label>
-                    <div class="accordion-content">
-                        <div class="wrap-content">
-							<h3>Filter</h3>
-							<div id="filtermenu" class="row">
-								<ul>
-									<li class="filter-site">
-										<img class="share-site" src="/assets/logo_xvideos.png" alt="xvideos">
-										<div class="switch-container">
-											<label class="switch">
-												<input type="checkbox" class="switch-input" checked>
-												<span class="switch-label" data-on="On" data-off="Off"></span>
-												<span class="switch-handle"></span>
-											</label>
-										</div>
-									</li>
-									<li class="filter-site">
-										<img class="share-site" src="/assets/logo_xvideos.png" alt="xvideos">
-										<div class="switch-container">
-										<label class="switch">
-											<input type="checkbox" class="switch-input" checked>
-											<span class="switch-label" data-on="On" data-off="Off"></span>
-											<span class="switch-handle"></span>
-										</label>
-										</div>
-									</li>
-									<li class="filter-site">
-										<img class="share-site" src="/assets/logo_xvideos.png" alt="xvideos">
-										<div class="switch-container">
-										<label class="switch">
-											<input type="checkbox" class="switch-input" checked>
-											<span class="switch-label" data-on="On" data-off="Off"></span>
-											<span class="switch-handle"></span>
-										</label>
-										</div>
-									</li>
-									<li class="filter-site">
-										<img class="share-site" src="/assets/logo_xvideos.png" alt="xvideos">
-										<div class="switch-container">
-										<label class="switch">
-											<input type="checkbox" class="switch-input" checked>
-											<span class="switch-label" data-on="On" data-off="Off"></span>
-											<span class="switch-handle"></span>
-										</label>
-										</div>
-									</li>
-									<li class="filter-site">
-										<img class="share-site" src="/assets/logo_xvideos.png" alt="xvideos">
-										<div class="switch-container">
-										<label class="switch">
-											<input type="checkbox" class="switch-input" checked>
-											<span class="switch-label" data-on="On" data-off="Off"></span>
-											<span class="switch-handle"></span>
-										</label>
-										</div>
-									</li>
-									<li class="filter-site">
-										<img class="share-site" src="/assets/logo_xvideos.png" alt="xvideos">
-										<div class="switch-container">
-										<label class="switch">
-											<input type="checkbox" class="switch-input" checked>
-											<span class="switch-label" data-on="On" data-off="Off"></span>
-											<span class="switch-handle"></span>
-										</label>
-										</div>
-									</li>
-									<li class="filter-site">
-										<img class="share-site" src="/assets/logo_xvideos.png" alt="xvideos">
-										<div class="switch-container">
-										<label class="switch">
-											<input type="checkbox" class="switch-input" checked>
-											<span class="switch-label" data-on="On" data-off="Off"></span>
-											<span class="switch-handle"></span>
-										</label>
-										</div>
-									</li>
-									<li class="filter-site">
-										<img class="share-site" src="/assets/logo_xvideos.png" alt="xvideos">
-										<div class="switch-container">
-										<label class="switch">
-											<input type="checkbox" class="switch-input" checked>
-											<span class="switch-label" data-on="On" data-off="Off"></span>
-											<span class="switch-handle"></span>
-										</label>
-										</div>
-									</li>
-									<li class="filter-site">
-										<img class="share-site" src="/assets/logo_xvideos.png" alt="xvideos">
-										<div class="switch-container">
-										<label class="switch">
-											<input type="checkbox" class="switch-input" checked>
-											<span class="switch-label" data-on="On" data-off="Off"></span>
-											<span class="switch-handle"></span>
-										</label>
-										</div>
-									</li>
-									<li class="filter-site">
-										<img class="share-site" src="/assets/logo_xvideos.png" alt="xvideos">
-										<div class="switch-container">
-										<label class="switch">
-											<input type="checkbox" class="switch-input" checked>
-											<span class="switch-label" data-on="On" data-off="Off"></span>
-											<span class="switch-handle"></span>
-										</label>
-										</div>
-									</li>
-								</ul>
-							</div>
-							<h3>Sort</h3>
-							<div id="sortmenu">
-								<h1>動画のソート</h1>
-							</div>
-                        </div>
-                    </div>
-                </li>
-
-            </ul>
 
 				<div id="contents">
+				<%= will_paginate %>
 					<ul id="og-grid" class="og-grid">
-						<li>
-							<a data-hlink="http://cargocollective.com/jaimemartinez/" data-largesrc="http://flashservice.xvideos.com/embedframe/4464054" data-title="桐原エリカ" data-description="Big Juggs Asian Girl Get Fucked Hardcore Style clip-35">
-								<div class="chapter">
-									<img class ="previewEvent" src="/assets/1.png" alt="img01"/>
-									<p class ="previewEvent">34854-2. 甘え上手な人妻 芦名未帆 testtestesetestwtetetetetetetete</p>
-									<table>
-										<tr>
-											<th>TIME</th>
-											<td class="time">1:00:00</td>
-										</tr>
-										<tr>
-											<th>TAGS</th>
-											<td class="tag">
-												<a href="/tags/40">美少女</a>
-												<a href="/tags/41">若妻</a>
-												<a href="/tags/42">スレンダー</a>
-											</td>
-										</tr>
-									</table>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a data-hlink="http://cargocollective.com/jaimemartinez/" data-largesrc="http://flashservice.xvideos.com/embedframe/4464054" data-title="桐原エリカ" data-description="Big Juggs Asian Girl Get Fucked Hardcore Style clip-35">
-								<div class="chapter">
-									<img class ="previewEvent" src="/assets/2.png" alt="img02"/>
-									<p class ="previewEvent">34854-2. 甘え上手な人妻 芦名未帆 testtestesetestwtetetetetetetete</p>
-									<table>
-										<tr>
-											<th>TIME</th>
-											<td class="time">1:00:00</td>
-										</tr>
-										<tr>
-											<th>TAGS</th>
-											<td class="tag">
-												<a href="/tags/40">美少女</a>
-												<a href="/tags/41">若妻</a>
-												<a href="/tags/42">スレンダー</a>
-											</td>
-										</tr>
-									</table>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a data-hlink="http://cargocollective.com/jaimemartinez/" data-largesrc="http://flashservice.xvideos.com/embedframe/4464054" data-title="桐原エリカ" data-description="Big Juggs Asian Girl Get Fucked Hardcore Style clip-35">
-								<div class="chapter">
-									<img class ="previewEvent" src="/assets/3.png" alt="img03"/>
-									<p class ="previewEvent">34854-2. 甘え上手な人妻 芦名未帆 testtestesetestwtetetetetetetete</p>
-									<table>
-										<tr>
-											<th>TIME</th>
-											<td class="time">1:00:00</td>
-										</tr>
-										<tr>
-											<th>TAGS</th>
-											<td class="tag">
-												<a href="/tags/40">美少女</a>
-												<a href="/tags/41">若妻</a>
-												<a href="/tags/42">スレンダー</a>
-											</td>
-										</tr>
-									</table>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a data-hlink="http://cargocollective.com/jaimemartinez/" data-largesrc="http://flashservice.xvideos.com/embedframe/4464054" data-title="桐原エリカ" data-description="Big Juggs Asian Girl Get Fucked Hardcore Style clip-35">
-								<div class="chapter">
-									<img class ="previewEvent" src="/assets/1.png" alt="img01"/>
-									<p class ="previewEvent">34854-2. 甘え上手な人妻 芦名未帆 testtestesetestwtetetetetetetete</p>
-									<table>
-										<tr>
-											<th>TIME</th>
-											<td class="time">1:00:00</td>
-										</tr>
-										<tr>
-											<th>TAGS</th>
-											<td class="tag">
-												<a href="/tags/40">美少女</a>
-												<a href="/tags/41">若妻</a>
-												<a href="/tags/42">スレンダー</a>
-											</td>
-										</tr>
-									</table>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a data-hlink="http://cargocollective.com/jaimemartinez/" data-largesrc="http://flashservice.xvideos.com/embedframe/4464054" data-title="桐原エリカ" data-description="Big Juggs Asian Girl Get Fucked Hardcore Style clip-35">
-								<div class="chapter">
-									<img class ="previewEvent" src="/assets/2.png" alt="img02"/>
-									<p class ="previewEvent">34854-2. 甘え上手な人妻 芦名未帆 testtestesetestwtetetetetetetete</p>
-									<table>
-										<tr>
-											<th>TIME</th>
-											<td class="time">1:00:00</td>
-										</tr>
-										<tr>
-											<th>TAGS</th>
-											<td class="tag">
-												<a href="/tags/40">美少女</a>
-												<a href="/tags/41">若妻</a>
-												<a href="/tags/42">スレンダー</a>
-											</td>
-										</tr>
-									</table>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a data-hlink="http://cargocollective.com/jaimemartinez/" data-largesrc="http://flashservice.xvideos.com/embedframe/4464054" data-title="桐原エリカ" data-description="Big Juggs Asian Girl Get Fucked Hardcore Style clip-35">
-								<div class="chapter">
-									<img class ="previewEvent" src="/assets/3.png" alt="img03"/>
-									<p class ="previewEvent">34854-2. 甘え上手な人妻 芦名未帆 testtestesetestwtetetetetetetete</p>
-									<table>
-										<tr>
-											<th>TIME</th>
-											<td class="time">1:00:00</td>
-										</tr>
-										<tr>
-											<th>TAGS</th>
-											<td class="tag">
-												<a href="/tags/40">美少女</a>
-												<a href="/tags/41">若妻</a>
-												<a href="/tags/42">スレンダー</a>
-											</td>
-										</tr>
-									</table>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a data-hlink="http://cargocollective.com/jaimemartinez/" data-largesrc="http://flashservice.xvideos.com/embedframe/4464054" data-title="桐原エリカ" data-description="Big Juggs Asian Girl Get Fucked Hardcore Style clip-35">
-								<div class="chapter">
-									<img class ="previewEvent" src="/assets/1.png" alt="img01"/>
-									<p class ="previewEvent">34854-2. 甘え上手な人妻 芦名未帆 testtestesetestwtetetetetetetete</p>
-									<table>
-										<tr>
-											<th>TIME</th>
-											<td class="time">1:00:00</td>
-										</tr>
-										<tr>
-											<th>TAGS</th>
-											<td class="tag">
-												<a href="/tags/40">美少女</a>
-												<a href="/tags/41">若妻</a>
-												<a href="/tags/42">スレンダー</a>
-											</td>
-										</tr>
-									</table>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a data-hlink="http://cargocollective.com/jaimemartinez/" data-largesrc="http://flashservice.xvideos.com/embedframe/4464054" data-title="桐原エリカ" data-description="Big Juggs Asian Girl Get Fucked Hardcore Style clip-35">
-								<div class="chapter">
-									<img class ="previewEvent" src="/assets/2.png" alt="img02"/>
-									<p class ="previewEvent">34854-2. 甘え上手な人妻 芦名未帆 testtestesetestwtetetetetetetete</p>
-									<table>
-										<tr>
-											<th>TIME</th>
-											<td class="time">1:00:00</td>
-										</tr>
-										<tr>
-											<th>TAGS</th>
-											<td class="tag">
-												<a href="/tags/40">美少女</a>
-												<a href="/tags/41">若妻</a>
-												<a href="/tags/42">スレンダー</a>
-											</td>
-										</tr>
-									</table>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a data-hlink="http://cargocollective.com/jaimemartinez/" data-largesrc="http://flashservice.xvideos.com/embedframe/4464054" data-title="桐原エリカ" data-description="Big Juggs Asian Girl Get Fucked Hardcore Style clip-35">
-								<div class="chapter">
-									<img class ="previewEvent" src="/assets/3.png" alt="img03"/>
-									<p class ="previewEvent">34854-2. 甘え上手な人妻 芦名未帆 testtestesetestwtetetetetetetete</p>
-									<table>
-										<tr>
-											<th>TIME</th>
-											<td class="time">1:00:00</td>
-										</tr>
-										<tr>
-											<th>TAGS</th>
-											<td class="tag">
-												<a href="/tags/40">美少女</a>
-												<a href="/tags/41">若妻</a>
-												<a href="/tags/42">スレンダー</a>
-											</td>
-										</tr>
-									</table>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a data-hlink="http://cargocollective.com/jaimemartinez/" data-largesrc="http://flashservice.xvideos.com/embedframe/4464054" data-title="桐原エリカ" data-description="Big Juggs Asian Girl Get Fucked Hardcore Style clip-35">
-								<div class="chapter">
-									<img class ="previewEvent" src="/assets/1.png" alt="img01"/>
-									<p class ="previewEvent">34854-2. 甘え上手な人妻 芦名未帆 testtestesetestwtetetetetetetete</p>
-									<table>
-										<tr>
-											<th>TIME</th>
-											<td class="time">1:00:00</td>
-										</tr>
-										<tr>
-											<th>TAGS</th>
-											<td class="tag">
-												<a href="/tags/40">美少女</a>
-												<a href="/tags/41">若妻</a>
-												<a href="/tags/42">スレンダー</a>
-											</td>
-										</tr>
-									</table>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a data-hlink="http://cargocollective.com/jaimemartinez/" data-largesrc="http://flashservice.xvideos.com/embedframe/4464054" data-title="桐原エリカ" data-description="Big Juggs Asian Girl Get Fucked Hardcore Style clip-35">
-								<div class="chapter">
-									<img class ="previewEvent" src="/assets/2.png" alt="img02"/>
-									<p class ="previewEvent">34854-2. 甘え上手な人妻 芦名未帆 testtestesetestwtetetetetetetete</p>
-									<table>
-										<tr>
-											<th>TIME</th>
-											<td class="time">1:00:00</td>
-										</tr>
-										<tr>
-											<th>TAGS</th>
-											<td class="tag">
-												<a href="/tags/40">美少女</a>
-												<a href="/tags/41">若妻</a>
-												<a href="/tags/42">スレンダー</a>
-											</td>
-										</tr>
-									</table>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a data-hlink="http://cargocollective.com/jaimemartinez/" data-largesrc="http://flashservice.xvideos.com/embedframe/4464054" data-title="桐原エリカ" data-description="Big Juggs Asian Girl Get Fucked Hardcore Style clip-35">
-								<div class="chapter">
-									<img class ="previewEvent" src="/assets/3.png" alt="img03"/>
-									<p class ="previewEvent">34854-2. 甘え上手な人妻 芦名未帆 testtestesetestwtetetetetetetete</p>
-									<table>
-										<tr>
-											<th>TIME</th>
-											<td class="time">1:00:00</td>
-										</tr>
-										<tr>
-											<th>TAGS</th>
-											<td class="tag">
-												<a href="/tags/40">美少女</a>
-												<a href="/tags/41">若妻</a>
-												<a href="/tags/42">スレンダー</a>
-											</td>
-										</tr>
-									</table>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a data-hlink="http://cargocollective.com/jaimemartinez/" data-largesrc="http://flashservice.xvideos.com/embedframe/4464054" data-title="桐原エリカ" data-description="Big Juggs Asian Girl Get Fucked Hardcore Style clip-35">
-								<div class="chapter">
-									<img class ="previewEvent" src="/assets/1.png" alt="img01"/>
-									<p class ="previewEvent">34854-2. 甘え上手な人妻 芦名未帆 testtestesetestwtetetetetetetete</p>
-									<table>
-										<tr>
-											<th>TIME</th>
-											<td class="time">1:00:00</td>
-										</tr>
-										<tr>
-											<th>TAGS</th>
-											<td class="tag">
-												<a href="/tags/40">美少女</a>
-												<a href="/tags/41">若妻</a>
-												<a href="/tags/42">スレンダー</a>
-											</td>
-										</tr>
-									</table>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a data-hlink="http://cargocollective.com/jaimemartinez/" data-largesrc="http://flashservice.xvideos.com/embedframe/4464054" data-title="桐原エリカ" data-description="Big Juggs Asian Girl Get Fucked Hardcore Style clip-35">
-								<div class="chapter">
-									<img class ="previewEvent" src="/assets/2.png" alt="img02"/>
-									<p class ="previewEvent">34854-2. 甘え上手な人妻 芦名未帆 testtestesetestwtetetetetetetete</p>
-									<table>
-										<tr>
-											<th>TIME</th>
-											<td class="time">1:00:00</td>
-										</tr>
-										<tr>
-											<th>TAGS</th>
-											<td class="tag">
-												<a href="/tags/40">美少女</a>
-												<a href="/tags/41">若妻</a>
-												<a href="/tags/42">スレンダー</a>
-											</td>
-										</tr>
-									</table>
-								</div>
-							</a>
-						</li>
-						<li>
-							<a data-hlink="http://cargocollective.com/jaimemartinez/" data-largesrc="http://flashservice.xvideos.com/embedframe/4464054" data-title="桐原エリカ" data-description="Big Juggs Asian Girl Get Fucked Hardcore Style clip-35">
-								<div class="chapter">
-									<img class ="previewEvent" src="/assets/3.png" alt="img03"/>
-									<p class ="previewEvent">34854-2. 甘え上手な人妻 芦名未帆 testtestesetestwtetetetetetetete</p>
-									<table>
-										<tr>
-											<th>TIME</th>
-											<td class="time">1:00:00</td>
-										</tr>
-										<tr>
-											<th>TAGS</th>
-											<td class="tag">
-												<a href="/tags/40">美少女</a>
-												<a href="/tags/41">若妻</a>
-												<a href="/tags/42">スレンダー</a>
-											</td>
-										</tr>
-									</table>
-								</div>
-							</a>
-						</li>
-
+						<% @movies.each do |movie| %>
+							<li>
+								<a data-hlink=<%= movie.url %> data-largesrc=<%= movie.url %> data-title="タイトル" data-description=<%= movie.description %>>
+									<div class="chapter">
+										<img class ="previewEvent" src="/assets/1.png" alt="img01"/>
+										<p class ="previewEvent"><%= movie.description %></p>
+										<table>
+											<tr>
+												<th>TIME</th>
+												<td class="time">1:00:00</td>
+											</tr>
+											<tr>
+												<th>TAGS</th>
+												<td class="tag">
+													<a href="/tags/40">美少女</a>
+													<a href="/tags/41">若妻</a>
+													<a href="/tags/42">スレンダー</a>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</a>
+							</li>
+						<% end %>
 					</ul>
+				<%= will_paginate %>
 				</div>
-
-				<div id="pagenav">
-					<ul class="pagination">
-						<li class="disabled"><a href="">&laquo;</a></li>
-						<li class="active"><a href="">1</a></li>
-						<li><a href="">2</a></li>
-						<li><a href="">3</a></li>
-						<li><a href="">&raquo;</a></li>
-					</ul>
-				</div>
-
 			</div>
 		</article>
