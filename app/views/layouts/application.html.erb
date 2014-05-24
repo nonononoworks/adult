@@ -28,7 +28,7 @@
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<script>
-		$(function() {
+		$(document).on('page:change', function(e) {
 			Grid.init();
 		});
 	</script>
