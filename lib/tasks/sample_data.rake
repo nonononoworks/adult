@@ -1,6 +1,6 @@
 namespace :db do
   desc "Fill database with sample data"
-  task populate: :environment do
+  task populate: :prooduction do
     Movie.create!(url: "http://example.com",
                  description: "examples")
     99.times do |n|

@@ -10,6 +10,7 @@ gem 'bcrypt-ruby', '3.1.2'
 gem 'faker', '1.1.2'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'acts-as-taggable-on'
 
 # test fails without this
 gem 'minitest'

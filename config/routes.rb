@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :movies, only: [:index, :show]
+  resources :movies, :only => :index do # => tagアクションを追加しました。
+    collection do
+      get 'tag'
+    end
+  end
+  resources :tags, :only => :index
+
   root  'movies#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

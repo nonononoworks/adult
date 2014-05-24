@@ -24,7 +24,6 @@ body {
 /* TOP MENU */
 
 header{
-	overflow:hidden;
 	top: 0;
 	border-top: #6699FF 4px solid;
 	margin-left: 0;
@@ -44,7 +43,7 @@ header{
 	border-bottom: solid #eaeaea 1px;
 	border-left: solid #eaeaea 1px;
 	border-right: solid #eaeaea 1px;
-	width: 100%;
+	width: 1100px;
 	height: 61px;
 	background-color: rgba(255,255,255,0.9);
 	list-style: none;
@@ -502,3 +501,9 @@ footer a {
 	width: 50%;
 	text-align: center;
 }
+
+/*tags*/
+.css1 { font-size: 1.0em; }
+.css2 { font-size: 1.2em; }
+.css3 { font-size: 1.4em; }
+.css4 { font-size: 1.6em; }
