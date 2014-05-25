@@ -197,7 +197,9 @@ var Grid = (function() {
 		};
 
 	function init( config ) {
-		
+		// reset variables
+		resetVariables();
+
 		// the settings..
 		settings = $.extend( true, {}, settings, config );
 
@@ -213,6 +215,41 @@ var Grid = (function() {
 
 		} );
 
+	}
+
+	function resetVariables(){
+		// list of items
+		$grid = $( '#og-grid' );
+		// the items
+		$items = $grid.children( 'li' );
+		// current expanded item's index
+		current = -1;
+		// position (top) of the expanded item
+		// used to know if the preview will expand in a different row
+		previewPos = -1;
+		// extra amount of pixels to scroll the window
+		scrollExtra = 0;
+		// extra margin when expanded (between preview overlay and the next items)
+		marginExpanded = 10;
+		$window = $( window ), winsize;
+		$body = $( 'html, body' );
+		// transitionend events
+		transEndEventNames = {
+			'WebkitTransition' : 'webkitTransitionEnd',
+			'MozTransition' : 'transitionend',
+			'OTransition' : 'oTransitionEnd',
+			'msTransition' : 'MSTransitionEnd',
+			'transition' : 'transitionend'
+		};
+		transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ];
+		// support for csstransitions
+		support = Modernizr.csstransitions;
+		// default settings
+		settings = {
+			minHeight : 500,
+			speed : 350,
+			easing : 'ease'
+		};
 	}
 
 	// add more items to the grid.
@@ -246,7 +283,7 @@ var Grid = (function() {
 	}
 
 	function initEvents() {
-		
+	
 		// when clicking an item, show the preview with the item´s info and large image.
 		// close the item if already expanded.
 		// also close if clicking on the item´s cross
@@ -271,10 +308,12 @@ var Grid = (function() {
 	}
 
 	function initItemsEvents( $items ) {
+
 		$items.on( 'click', 'span.og-close', function() {
 			hidePreview();
 			return false;
 		} ).find( '.previewEvent' ).each(function(){
+			console.log($(this));
 			$(this).on( 'click', function(e) {
 				var $item = $( this ).parent().parent().parent();
 				// check if item already opened

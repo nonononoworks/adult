@@ -66,3 +66,12 @@
 				</div>
 			</div>
 		</article>
+
+	<% content_for :javascript_includes do %>
+	  <%= javascript_include_tag "grid.js" %>
+	<% end %>
+	<script>
+		$(document).on('page:change', function(e) {
+			Grid.init();
+		});
+	</script>

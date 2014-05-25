@@ -11,8 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap
 //= require modernizr.custom.js
 //= require turbolinks
-//= require_tree .
+//= require myscript.js
