@@ -199,6 +199,7 @@ var Grid = (function() {
 	function init( config ) {
 		// reset variables
 		resetVariables();
+		resetEvents($items);
 
 		// the settings..
 		settings = $.extend( true, {}, settings, config );
@@ -250,6 +251,13 @@ var Grid = (function() {
 			speed : 350,
 			easing : 'ease'
 		};
+	}
+
+	function resetEvents( $items ){
+
+		$items.find( '.previewEvent' ).each(function(){
+			$(this).off( 'click' );
+		});
 	}
 
 	// add more items to the grid.
@@ -317,7 +325,11 @@ var Grid = (function() {
 			$(this).on( 'click', function(e) {
 				var $item = $( this ).parent().parent().parent();
 				// check if item already opened
-				current === $item.index() ? hidePreview() : showPreview( $item );
+				if (current === $item.index()){
+					hidePreview();
+				}else{
+					showPreview( $item );
+				}
 				return false;
 
 			} );
@@ -470,12 +482,12 @@ var Grid = (function() {
 		},
 		open : function() {
 
-			setTimeout( $.proxy( function() {	
+
 				// set the height for the preview and the item
 				this.setHeights();
 				// scroll to position the preview in the right place
 				this.positionPreview();
-			}, this ), 25 );
+
 
 		},
 		close : function() {

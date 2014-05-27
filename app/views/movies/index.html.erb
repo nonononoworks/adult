@@ -70,7 +70,7 @@
 	<% content_for :javascript_includes do %>
 	  <%= javascript_include_tag "grid.js" %>
 	<% end %>
-	<script>
+	<script data-turbolinks-eval="false">
 		$(document).on('page:change', function(e) {
 			Grid.init();
 		});
