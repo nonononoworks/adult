@@ -1,0 +1,38 @@
+		<article>
+			<div id ="main" class="container">
+
+				<div id="contents">
+				<%= will_paginate %>
+					<ul id="og-grid_gils" class="og-grid_gils">
+						<% @girls.each do |girl| %>
+							<li>
+								<div class="chapter_girls">
+									<img class ="previewEvent" src=<%= "/assets/girls/#{girl.name_alpha}.jpg" %> alt="img01"/>
+									<p class ="previewEvent"><%= "#{girl.name}(#{girl.name_hira})" %></p>
+									<table>
+										<tr>
+											<th>生年月日</th>
+											<td><%= girl.birthday %></td>
+										</tr>
+										<tr>
+											<th>身長</th>
+											<td><%= girl.tall %></td>
+										</tr>
+										<tr>
+											<th>サイズ</th>
+											<td><%= "B#{girl.bust} W#{girl.west} H#{girl.hip}"%></td>
+										</tr>
+										<tr class="row-last">
+											<th>出身地</th>
+											<td><%= girl.hometown %></td>
+										</tr>
+									</table>
+								</div>
+							</li>
+						<% end %>
+					</ul>
+				<%= will_paginate %>
+				</div>
+			</div>
+		</article>
+

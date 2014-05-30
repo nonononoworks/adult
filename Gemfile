@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 
@@ -11,7 +10,13 @@ gem 'faker', '1.1.2'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'acts-as-taggable-on'
-gem 'jquery-turbolinks'
+
+# for Scraping
+gem 'eventmachine'
+gem 'json'
+gem 'method_source'
+gem 'romaji'
+gem 'nokogiri'
 
 # test fails without this
 gem 'minitest'

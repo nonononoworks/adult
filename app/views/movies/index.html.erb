@@ -51,7 +51,7 @@
 											<tr>
 												<th>TAGS</th>
 												<td class="tag">
-													<% tag_cloud(movie.tag_counts_on(:tags), %w(dummy1 dummy2 dummy3 dummy4)) do |tag, css_class| %>
+													<% tag_cloud(movie.tag_counts_on(:girls), %w(dummy1 dummy2 dummy3 dummy4)) do |tag, css_class| %>
 													  <%= link_to tag.name, { :action => :tag, :name => tag.name }, :class => css_class %>
 													<% end %>
 												</td>

@@ -4,7 +4,8 @@ Rails.application.routes.draw do
       get 'tag'
     end
   end
-  resources :tags, :only => :index
+  resources :tags,  :only => :index
+  resources :girls, :only => :index
 
   root  'movies#index'
   # The priority is based upon order of creation: first created -> highest priority.

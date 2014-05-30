@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140524123757) do
+ActiveRecord::Schema.define(version: 20140529220250) do
+
+  create_table "girls", force: true do |t|
+    t.string   "name"
+    t.string   "name_hira"
+    t.string   "name_alpha"
+    t.datetime "birthday"
+    t.integer  "tall"
+    t.integer  "bust"
+    t.integer  "west"
+    t.integer  "hip"
+    t.string   "hometown"
+    t.string   "image_path"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "movies", force: true do |t|
     t.string   "url"
