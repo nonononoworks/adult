@@ -13,10 +13,11 @@ gem 'acts-as-taggable-on'
 
 # for Scraping
 gem 'eventmachine'
-gem 'json'
 gem 'method_source'
 gem 'romaji'
 gem 'nokogiri'
+gem 'json'
+gem 'rmagick'
 
 # test fails without this
 gem 'minitest'

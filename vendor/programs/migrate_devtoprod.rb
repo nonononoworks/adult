@@ -42,9 +42,25 @@ class MovieProd < ProductionDB
   self.table_name = :movies
 end
 
-MovieDev.do |movie|
+MovieDev.all.each do |moviedev|
 
-  if MovieProd.find_by(url:movie.url)
+  if MovieProd.find_by(id: moviedev.id)
+    #update
+    movieprod = MovieProd.find_by(moviedev.id)
+  else
+    #create
+    movieprod = MovieProd.new(id: moviedev.id)
+  end
+
+  movieprod.url         = moviedev.url
+  movieprod.embed       = moviedev.embed
+  movieprod.title       = moviedev.title
+  movieprod.description = moviedev.descriptio
+  movieprod.image_path  = moviedev.image_path
+  movieprod.plays       = moviedev.plays
+  movieprod.created_at  = moviedev.created_at
+  movieprod.updated_at  = moviedev.updated_at
+  movieprod.save
 
 end
 
