@@ -133,12 +133,7 @@ header{
 	padding-right: 0;
 	padding-top: 16px;
 	padding-bottom: 12px;
-	background-color: inherit;
-	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAYCAMAAAA4a6b0AAAABGdBTUEAALGPC/xhBQAAAJBQTFRFzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMAAAAzMzMUcf7QQAAAC90Uk5T8HOlUYhWipPXU1Ly2S7zEDQLVZBcVKv6puOSBy/cHN/gAwysW5Hb+DDkOPkGiQDShpO+AAAA1klEQVQoz3WR6RKCMAyE630rhwgCyn235f3fzoQCLYr7g8nONymbhHAU3ThBc907BuWjCH5WedsrP6okYq0iFkkyAYBGYqFtsjqO66zB2uoJfYKpSuHKCo2IQVLsKIff+gXYuyAPKF2Z1QWbCBJCWUtSgw0FwXZlPg8fF+Q0JbEk57+vYYJMkkwmwNSFP4CLknoyqY+TEq/fjtFtx9R0XTMbZXOw0W37LTZcYTeLussd5OWWIyLi2mkS2HaQpHS4FuuJKoFet1/Sodd7pofzNYJZwhcA+AduxGVdgxx/1wAAAABJRU5ErkJggg==");
-	background-repeat: no-repeat;  
-	background-position:180px 22px; 
 	margin-right: 0px;
-
 }
 
 #submenu #topSearch,
@@ -203,22 +198,15 @@ input[type="file"] {
 	border:0;
 	margin:0;
 }
-.search input[type=submit]{
-	display: none;
+.search input[type=image]{
 	cursor:pointer;
 	float:right;
 	position:relative;
-	padding:0;
-	margin:0;
+	padding-top:4px;
+	padding-right:10px;
 	color:#333;
 	font-family: 'Open Sans', "Lucida Grande", "segoe UI", "ヒラギノ丸ゴ ProN W4", "Hiragino Maru Gothic ProN", Meiryo, Arial, sans-serif;
 	font-size: 16px;
-	width:50px;
-	height:34px;
-	background-color: #f1f1f1;
-	border: 1px solid red;
-
-
 }
 
 /* =Article

@@ -22,21 +22,22 @@
 								<%= link_to "Tags", tags_path %>
 							</li>
 							<li class="menu-item">
-								<a href="#">Favourite</a>
+								<%= link_to "Favourites", favourite_movies_path %>
 							</li>
 
 							<li id="submenu">
+
 								<div id="topSearch">
+
 									<div class="search">
-										<form method="get" class="searchform" id="searchform-1" action="http://subtlepatterns.com/">
-											<div>
-												<input class="searchtext" name="s" id="searchtext-1" value="search" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" type="text">
-												<input value="Go" class="searchsubmit" id="searchsubmit-1" type="submit">
-											</div>
-										</form>
+										<%= form_tag "/movies/find" do %>
+										<%= text_field_tag :search_string %>
+										<%= image_submit_tag("search_button.png") %>
+										<% end %>
 									</div><!-- search -->
 								</div>
 							</li>
+
 
 
 

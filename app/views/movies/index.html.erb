@@ -1,3 +1,4 @@
+
 		<article>
 			<div id ="main" class="container">
 
@@ -39,7 +40,7 @@
 					<ul id="og-grid" class="og-grid">
 						<% @movies.each do |movie| %>
 							<li>
-								<a data-hlink=<%= movie.url %> data-largesrc=<%= movie.embed %> data-title=<%= movie.title %> data-description=<%= movie.title %>>
+								<a data-id=<%= movie.id %> data-hlink=<%= movie.url %> data-largesrc=<%= movie.embed %> data-title=<%= movie.title %> data-description=<%= movie.title %>>
 									<div class="chapter">
 										<img class ="previewEvent" src=<%= "/assets/movies/#{movie.image_path}" %> alt="img01"/>
 										<p class ="previewEvent"><%= movie.title %></p>
@@ -67,6 +68,7 @@
 			</div>
 		</article>
 
+<%= debug @test %>
 	<% content_for :javascript_includes do %>
 	  <%= javascript_include_tag "grid.js" %>
 	<% end %>

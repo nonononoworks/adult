@@ -10,6 +10,20 @@ class MoviesController < ApplicationController
 		render 'index'
 	end
 
-	def show
+	def favourite
+		cookies[:user_name] = '4'
+		content = cookies[:local_favourite]
+		cookieArray = content.split('/')
+
+		@test = content
+		@movies = Movie.where(id: cookieArray ).paginate(page: params[:page])
+
+		render 'index'
+	end
+
+	def find
+		@movies = Movie.search(title_cont: params[:search_string])
+		@movies = @movies.result.paginate(page: params[:page])
+		render 'index'
 	end
 end

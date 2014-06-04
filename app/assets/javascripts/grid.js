@@ -397,7 +397,8 @@ var Grid = (function() {
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
 			this.$href = $( '<a href="#">Visit website</a>' );
-			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href );
+			this.$favourite = $( '<a>Add to Favourite</a>' );
+			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href, this.$favourite );
 			this.$loading = $( '<div class="og-loading"></div>' );
 			this.$frame = $( '<iframe class="inline-videos"></iframe>' );
 			this.$fullimage = $( '<div class="og-fullimg"></div>' );
@@ -434,9 +435,10 @@ var Grid = (function() {
 			// update preview´s content
 			var $itemEl = this.$item.children( 'a' ),
 				eldata = {
-					href : $itemEl.data( 'hlink' ),
-					largesrc : $itemEl.data( 'largesrc' ),
-					title : $itemEl.data( 'title' ),
+					id          : $itemEl.data( 'id' ),
+					href        : $itemEl.data( 'hlink' ),
+					largesrc    : $itemEl.data( 'largesrc' ),
+					title       : $itemEl.data( 'title' ),
 					description : $itemEl.data( 'description' )
 				};
 
@@ -446,7 +448,28 @@ var Grid = (function() {
 			this.$href.attr( 'href', eldata.href );
 
 			var self = this;
-			
+
+			//cookie
+			self.$favourite.off();
+			this.$favourite.on( 'click', function(e) {
+				var cookieFavourite = self.getCookie('local_favourite');
+				var cookieArray = cookieFavourite.split('/');
+				var cookieId = String(eldata.id);
+
+				var cookieIndex = cookieArray.indexOf(cookieId)
+				if (cookieIndex >= 0){
+					cookieArray.splice(cookieIndex,1);
+					cookieFavourite = cookieArray.join('/')
+				}else{
+					if (cookieFavourite){
+						cookieFavourite = cookieFavourite + '/' + cookieId;
+					}else{
+						cookieFavourite = cookieId;
+					}					
+				}
+				self.setCookie('local_favourite',cookieFavourite,30);
+				alert(cookieFavourite);
+			} );			
 			// remove the current image in the preview
 			if( typeof self.$largeImg != 'undefined' ) {
 				self.$largeImg.remove();
@@ -482,12 +505,10 @@ var Grid = (function() {
 		},
 		open : function() {
 
-
 				// set the height for the preview and the item
 				this.setHeights();
 				// scroll to position the preview in the right place
 				this.positionPreview();
-
 
 		},
 		close : function() {
@@ -581,7 +602,53 @@ var Grid = (function() {
 		},
 		getEl : function() {
 			return this.$previewEl;
+		},
+		// クッキー保存　setCookie(クッキー名, クッキーの値, クッキーの有効日数); //
+		setCookie  : function (c_name,value,expiredays){
+		    // pathの指定
+		    //var path = location.pathname;
+		    var path = '/';
+		    // pathをフォルダ毎に指定する場合のIE対策
+		    //var paths = new Array();
+		    //paths = path.split("/");
+		    //if(paths[paths.length-1] != ""){
+		    //    paths[paths.length-1] = "";
+		    //    path = paths.join("/");
+		    //}
+		    // 有効期限の日付
+		    var extime = new Date().getTime();
+		    var cltime = new Date(extime + (60*60*24*1000*expiredays));
+		    var exdate = cltime.toUTCString();
+		    // クッキーに保存する文字列を生成
+		    var s="";
+		    s += c_name +"="+ escape(value);// 値はエンコードしておく
+		    s += "; path="+ path;
+		    if(expiredays){
+		        s += "; expires=" +exdate+"; ";
+		    }else{
+		        s += "; ";
+		    }
+		    // クッキーに保存
+		    document.cookie=s;
+		},
+		// クッキーの値を取得 getCookie(クッキー名); //
+		getCookie  : function (c_name){
+		    var st="";
+		    var ed="";
+		    if(document.cookie.length>0){
+		        // クッキーの値を取り出す
+		        st=document.cookie.indexOf(c_name + "=");
+		        if(st!=-1){
+		            st=st+c_name.length+1;
+		            ed=document.cookie.indexOf(";",st);
+		            if(ed==-1) ed=document.cookie.length;
+		            // 値をデコードして返す
+		            return unescape(document.cookie.substring(st,ed));
+		        }
+		    }
+		    return "";
 		}
+
 	}
 
 	return { 
