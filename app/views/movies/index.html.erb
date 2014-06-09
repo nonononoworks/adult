@@ -2,6 +2,7 @@
 		<article>
 			<div id ="main" class="container">
 
+<%#
 				<div id="filter">
 	                <ul class="dopt-accordion light-theme arrow-tri">
 		                <li><input class="title-option" id="accx1" name="accordion-2" type="checkbox"><label class="title-panel" for="accx1" onclick="">
@@ -24,52 +25,70 @@
 											</li>
 										</ul>
 									</div>
-									<h3>Sort</h3>
-									<div id="sortmenu">
-										<h1>動画のソート</h1>
-									</div>
 		                        </div>
 		                    </div>
 		                </li>
 	            	</ul>
 				</div>
-
+%>
 
 				<div id="contents">
-				<%= will_paginate %>
-					<ul id="og-grid" class="og-grid">
-						<% @movies.each do |movie| %>
-							<li>
-								<a data-id=<%= movie.id %> data-hlink=<%= movie.url %> data-largesrc=<%= movie.embed %> data-title=<%= movie.title %> data-description=<%= movie.title %>>
-									<div class="chapter">
-										<img class ="previewEvent" src=<%= "/assets/movies/#{movie.image_path}" %> alt="img01"/>
-										<p class ="previewEvent"><%= movie.title %></p>
-										<table>
-											<tr>
-												<th>女優</th>
-												<td class="time"></td>
-											</tr>
-											<tr>
-												<th>タグ</th>
-												<td class="tag">
-													<% tag_cloud(movie.tag_counts_on(:tags), %w(dummy1 dummy2 dummy3 dummy4)) do |tag, css_class| %>
-													  <%= link_to tag.name, { :action => :tag, :name => tag.name }, :class => css_class %>
-													<% end %>
-												</td>
-											</tr>
-										</table>
-									</div>
-								</a>
+					<%= will_paginate %>
+
+					<div id="view-toggle-wrapper">
+						<ul id="menu-viewer-toggle"">
+							<li class="moviebox-counter">
+								<a><%= @movies.count %> movies</a>
 							</li>
-						<% end %>
-					</ul>
-				<%= will_paginate %>
+							<label for="category" class="select-wrap entypo-down-open-mini">
+									<% choices = [['投稿日時が新しい順', 11],['投稿日時が古い順', 1],['再生回数が多い順', 12], ['再生回数が少ない順', 2], ['タイトル(昇順)', 3], ['タイトル(降順)', 13]] %>
+									<%= select "movie", "sort", choices %>
+							</label>
+				
+							<li class="moviebox-list">
+								<i class ="glyphicon glyphicon-th-list" style="color: white;">></i>
+								<a href="">SORT</a>
+							</li>
+
+						</ul>
+					</div>
+
+					<div id="ajax_result">
+						<%= render :partial => 'result', :locals => { :movies => @movies, :sort => @sort } %>
+					</div>
+					<%= will_paginate %>
 				</div>
+
 			</div>
 		</article>
 	<% content_for :javascript_includes do %>
 	  <%= javascript_include_tag "grid.js" %>
 	<% end %>
+
+	<script>
+	$(function(){
+
+		  $('#movie_sort').change(function() {
+
+				var sortMethod = $(this).val(),
+					currentUrl = location.href;
+				$.ajax({
+					url: currentUrl,
+					type: "GET",
+					data: {
+					        sort: sortMethod
+					        },
+					dataType: "script",
+					success: function(data){
+						Grid.init();
+					}
+				});
+
+		    });
+
+	});
+	</script>
+
 	<script data-turbolinks-eval="false">
 		$(document).on('page:change', function(e) {
 			Grid.init();

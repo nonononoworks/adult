@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     collection do
       get 'tag'
       get 'favourite'
-      post 'find'
+      get 'find'
+      get 'sort'
     end
   end
   resources :tags,       :only => :index

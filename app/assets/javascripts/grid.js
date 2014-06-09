@@ -321,7 +321,6 @@ var Grid = (function() {
 			hidePreview();
 			return false;
 		} ).find( '.previewEvent' ).each(function(){
-			console.log($(this));
 			$(this).on( 'click', function(e) {
 				var $item = $( this ).parent().parent().parent();
 				// check if item already opened
@@ -579,8 +578,6 @@ var Grid = (function() {
 			// case 1 : preview height + item height fits in window´s height
 			// case 2 : preview height + item height does not fit in window´s height and preview height is smaller than window´s height
 			// case 3 : preview height + item height does not fit in window´s height and preview height is bigger than window´s height
-				console.log(this.$previewEl.offset().top);
-				console.log(scrollExtra);
 			var position = this.$item.data( 'offsetTop' ),
 				previewOffsetT = this.$previewEl.offset().top - scrollExtra;
 				//scrollVal = this.height + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;

@@ -1,0 +1,26 @@
+					<ul id="og-grid" class="og-grid">
+						<% movies.each do |movie| %>
+							<li>
+								<a data-id=<%= movie.id %> data-hlink=<%= movie.url %> data-largesrc=<%= movie.embed %> data-title=<%= movie.title %> data-description=<%= movie.title %>>
+									<div class="chapter">
+										<img class ="previewEvent" src=<%= "/assets/movies/#{movie.image_path}" %> alt="img01"/>
+										<p class ="previewEvent"><%= movie.title %></p>
+										<table>
+											<tr>
+												<th>女優</th>
+												<td class="time"></td>
+											</tr>
+											<tr>
+												<th>タグ</th>
+												<td class="tag">
+													<% tag_cloud(movie.tag_counts_on(:tags), %w(dummy1 dummy2 dummy3 dummy4)) do |tag, css_class| %>
+													  <%= link_to tag.name, { :action => :tag, :name => tag.name }, :class => css_class %>
+													<% end %>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</a>
+							</li>
+						<% end %>
+					</ul>

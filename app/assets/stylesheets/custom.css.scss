@@ -217,8 +217,8 @@ Article{
 }
 
 #main{
-	padding-left: 50px;
-	padding-right: 50px;
+	padding-left: 70px;
+	padding-right: 70px;
 
 }
 
@@ -539,3 +539,93 @@ footer a {
 .css2 { font-size: 1.2em; }
 .css3 { font-size: 1.4em; }
 .css4 { font-size: 1.6em; }
+
+/* =movies-list-box
+---------------------------------------------------------- */
+#view-toggle-wrapper {
+width: 100%;
+height: 50px;
+margin-top: 10px;
+margin-bottom: 0;
+padding-top: 0px;
+background-color: rgba(81,81,81,0.7);
+font-weight: 500;
+font-size: 12px;
+padding-right: 20px;
+overflow:hidden;
+
+}
+
+#view-toggle-wrapper ul {
+margin-left: 0px;
+line-height: 35px;
+padding-left: 0px;
+}
+
+#view-toggle-wrapper ul li {
+list-style: none;
+}
+
+#view-toggle-wrapper ul li a{
+color: #ccc;
+text-decoration: none;
+}
+#view-toggle-wrapper ul li a:link {
+text-transform: uppercase;
+}
+
+.moviebox-counter{
+display: block;
+padding-left: 24px;
+text-align: left;
+float: left;
+width: 150px;
+padding-top: 9px;
+}
+
+.moviebox-list{
+	padding-left: 25px;
+	padding-top: 9px;
+	display: block;
+	float: right;
+	width: 100px;
+	text-align: left;
+}
+.select-wrap{
+	top:0px;
+	float: left;
+	position:relative;
+	overflow:hidden;
+	display: block;
+	min-width:150px;
+	background-color:transparent;
+	height: 50px;
+	color: #ccc;
+}
+
+.select-wrap select{
+position:relative;
+z-index:2;
+display:block;
+width:200%;/* fallback non calc support */
+width:-webkit-calc(100% + 5em);
+margin:0;
+background:transparent;
+border:0;
+outline:none;
+height: 50px;
+line-height: 50px;
+}
+
+.entypo-down-open-mini:before{
+content: url("list_button.png"); 
+position:absolute;
+z-index:1;
+padding-top: 10px;
+right:12px;
+right:.75rem;
+}
+
+.select-wrap select option{
+	background-color: rgba(81,81,81,0.7);
+}
