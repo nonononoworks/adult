@@ -1,7 +1,8 @@
 class MoviesController < ApplicationController
 
+	before_action :sort_method
+
 	def index
-		@sort = sort_method(params[:sort])
 		@movies = Movie.order(@sort).paginate(page: params[:page])
 	    respond_to do |format|
 	      format.html 
@@ -10,7 +11,6 @@ class MoviesController < ApplicationController
 	end
 
 	def tag
-		@sort = sort_method(params[:sort])
 		@movies = Movie.tagged_with(params[:name]).order(@sort).paginate(page: params[:page])
 	    respond_to do |format|
 			format.html { render 'index' }
@@ -20,7 +20,6 @@ class MoviesController < ApplicationController
 	end
 
 	def favourite
-		@sort = sort_method(params[:sort])
 		cookies[:user_name] = '4'
 		content = cookies[:local_favourite]
 
@@ -37,7 +36,6 @@ class MoviesController < ApplicationController
 	end
 
 	def find
-		@sort = sort_method(params[:sort])
 		@movies = Movie.search(title_cont: params[:search_string])
 		@movies = @movies.result.order(@sort).paginate(page: params[:page])
 	    respond_to do |format|
@@ -47,7 +45,8 @@ class MoviesController < ApplicationController
 	end
 
 	private
-		def sort_method(sort_id)
+		def sort_method
+			sort_id = params[:sort]
 			if sort_id.nil?
 				sort = 'id'
 				direction = 'asc'
@@ -69,6 +68,6 @@ class MoviesController < ApplicationController
 						sort = 'title'
 				end
 			end
-			return "#{sort} #{direction}"
+			@sort = "#{sort} #{direction}"
 		end
 end

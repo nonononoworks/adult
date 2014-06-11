@@ -394,9 +394,9 @@ var Grid = (function() {
 		create : function() {
 			// create Preview structure:
 			this.$title = $( '<h3></h3>' );
-			this.$description = $( '<p></p>' );
+			this.$description = $( '<ul></ul>' );
 			this.$href = $( '<a href="#">Visit website</a>' );
-			this.$favourite = $( '<a>Add to Favourite</a>' );
+			this.$favourite = $( '<a></a>' );
 			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href, this.$favourite );
 			this.$loading = $( '<div class="og-loading"></div>' );
 			this.$frame = $( '<iframe class="inline-videos"></iframe>' );
@@ -442,29 +442,58 @@ var Grid = (function() {
 				};
 
 
+
 			this.$title.html( eldata.title );
-			this.$description.html( eldata.description );
+			//this.$description.html( eldata.description );
+			//	this.$description.html( $tags );
 			this.$href.attr( 'href', eldata.href );
+			this.$href.attr( 'class', 'og-link' );
 
 			var self = this;
 
+			self.$description.empty();
+			this.$item.find( '.tag a' ).each(function(){
+				taglist = $( '<li></li>' );
+				tag = $( '<a></a>' );
+				tag.attr('href', $(this).attr('href'));
+				tag.text( $(this).text());
+				taglist.append(tag);
+
+				self.$description.append(taglist);
+
+			});
 			//cookie
+			this.$favourite.attr( 'class', 'og-favourite' );
+
+			if (self.searchCookie(eldata.id) >= 0){
+				this.$favourite.text( 'remove from Favourite' );
+				this.$favourite.addClass('removeFavourite');
+			}else{
+				this.$favourite.text( 'Add to Favourite' );
+				this.$favourite.addClass('addFavourite');
+			}
+
 			self.$favourite.off();
 			this.$favourite.on( 'click', function(e) {
 				var cookieFavourite = self.getCookie('local_favourite');
 				var cookieArray = cookieFavourite.split('/');
 				var cookieId = String(eldata.id);
-
-				var cookieIndex = cookieArray.indexOf(cookieId)
+				var cookieIndex = self.searchCookie(cookieId);
 				if (cookieIndex >= 0){
 					cookieArray.splice(cookieIndex,1);
-					cookieFavourite = cookieArray.join('/')
+					cookieFavourite = cookieArray.join('/');
+					$(this).text('Add to Favourite');
+					$(this).removeClass('removeFavourite');
+					$(this).addClass('addFavourite');
 				}else{
 					if (cookieFavourite){
 						cookieFavourite = cookieFavourite + '/' + cookieId;
 					}else{
 						cookieFavourite = cookieId;
-					}					
+					}
+					$(this).text('remove from Favourite');
+					$(this).removeClass('addFavourite');
+					$(this).addClass('removeFavourite');
 				}
 				self.setCookie('local_favourite',cookieFavourite,30);
 				alert(cookieFavourite);
@@ -644,6 +673,13 @@ var Grid = (function() {
 		        }
 		    }
 		    return "";
+		},
+		searchCookie  : function(id){
+			var cookieFavourite = this.getCookie('local_favourite');
+			var cookieArray = cookieFavourite.split('/');
+			var cookieId = String(id);
+
+			return cookieArray.indexOf(cookieId);
 		}
 
 	}

@@ -151,19 +151,58 @@
 
 .og-details h3 {
 	font-weight: 300;
-	font-size: 52px;
+	font-size: 40px;
 	padding: 40px 0 10px;
 	margin-bottom: 10px;
+	height: 150px;
 }
 
-.og-details p {
-	font-weight: 400;
+.og-details ul {
+	padding: 0px;
+	height: 120px;
+	width: 100%;
 	font-size: 16px;
-	line-height: 22px;
 	color: #999;
 }
 
-.og-details a {
+.og-details ul li{
+	display: block;
+	float: left;
+	height: 40px;
+}
+
+.og-details .og-favourite {
+	font-weight: 700;
+	font-size: 16px;
+	color: #333;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 10px 20px;
+	border: 3px solid #333;
+	display: inline-block;
+	margin: 30px 0 0;
+	margin-left: 20px;
+	outline: none;
+}
+
+.og-details .og-favourite::before {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.addFavourite::before {
+	content: '\2606';
+}
+.removeFavourite::before {
+	content: '\2605';
+}
+
+.og-details .og-favourite:hover {
+	border-color: #999;
+	color: #999;
+}
+
+.og-details .og-link {
 	font-weight: 700;
 	font-size: 16px;
 	color: #333;
@@ -176,13 +215,13 @@
 	outline: none;
 }
 
-.og-details a::before {
+.og-details .og-link::before {
 	content: '\2192';
 	display: inline-block;
 	margin-right: 10px;
 }
 
-.og-details a:hover {
+.og-details .og-link:hover {
 	border-color: #999;
 	color: #999;
 }
