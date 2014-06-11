@@ -496,7 +496,6 @@ var Grid = (function() {
 					$(this).addClass('removeFavourite');
 				}
 				self.setCookie('local_favourite',cookieFavourite,30);
-				alert(cookieFavourite);
 			} );			
 			// remove the current image in the preview
 			if( typeof self.$largeImg != 'undefined' ) {

@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
 
-	before_action :sort_method
+	before_action :sort_method, :list_method, :current_url
 
 	def index
 		@movies = Movie.order(@sort).paginate(page: params[:page])
@@ -11,6 +11,7 @@ class MoviesController < ApplicationController
 	end
 
 	def tag
+		@name = params[:name]
 		@movies = Movie.tagged_with(params[:name]).order(@sort).paginate(page: params[:page])
 	    respond_to do |format|
 			format.html { render 'index' }
@@ -45,8 +46,31 @@ class MoviesController < ApplicationController
 	end
 
 	private
+		def current_url
+			@current = request.url
+		end
+		def list_method
+			if params[:listtype].blank?
+				if session[:listtype].blank?
+					@listtype = 'og-grid'
+				else
+					@listtype = session[:listtype]
+				end
+			else
+				session[:listtype] = params[:listtype]
+				@listtype = params[:listtype]
+			end
+		end
 		def sort_method
-			sort_id = params[:sort]
+
+			if params[:sort].blank?
+				sort_id = session[:sort]
+			else
+				session[:sort] = params[:sort]
+				sort_id = params[:sort]
+			end
+
+			@selected = sort_id
 			if sort_id.nil?
 				sort = 'id'
 				direction = 'asc'

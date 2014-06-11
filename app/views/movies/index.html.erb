@@ -31,7 +31,6 @@
 	            	</ul>
 				</div>
 %>
-
 				<div id="contents">
 					<%= will_paginate %>
 
@@ -42,19 +41,34 @@
 							</li>
 							<label for="category" class="select-wrap entypo-down-open-mini">
 									<% choices = [['投稿日時が新しい順', 11],['投稿日時が古い順', 1],['再生回数が多い順', 12], ['再生回数が少ない順', 2], ['タイトル(昇順)', 3], ['タイトル(降順)', 13]] %>
-									<%= select "movie", "sort", choices %>
+									<%= select "movie", "sort", choices, selected: @selected %>
 							</label>
-				
+
 							<li class="moviebox-list">
 								<i class ="glyphicon glyphicon-th-list" style="color: white;">></i>
-								<a href="">SORT</a>
+								<% if @current.index("?") then %>
+									<% listurl = @current + '&listtype=og-list' %>
+								<% else %>
+									<% listurl = @current + '?listtype=og-list' %>
+								<% end %>
+								<%= link_to 'LIST', listurl, remote:true, class:"ajax-list" %>
 							</li>
 
+							<li class="moviebox-grid">
+								<i class ="glyphicon glyphicon-th" style="color: white;">></i>
+								<% if @current.index("?") then %>
+									<% gridurl = @current + '&listtype=og-grid' %>
+								<% else %>
+									<% gridurl = @current + '?listtype=og-grid' %>
+								<% end %>
+								<%= link_to 'GRID', gridurl, remote:true, class:"ajax-grid" %>
+
+							</li>
 						</ul>
 					</div>
 
 					<div id="ajax_result">
-						<%= render :partial => 'result', :locals => { :movies => @movies, :sort => @sort } %>
+						<%= render :partial => 'result', :locals => { :movies => @movies, :listtype => @listtype } %>
 					</div>
 					<%= will_paginate %>
 				</div>
@@ -68,23 +82,30 @@
 	<script>
 	$(function(){
 
-		  $('#movie_sort').change(function() {
+		$('.ajax-list').on('ajax:success', function(event, data, status) {
+			Grid.init();
+		});
 
-				var sortMethod = $(this).val(),
-					currentUrl = location.href;
-				$.ajax({
-					url: currentUrl,
-					type: "GET",
-					data: {
-					        sort: sortMethod
-					        },
-					dataType: "script",
-					success: function(data){
-						Grid.init();
-					}
-				});
+		$('.ajax-grid').on('ajax:success', function(event, data, status) {
+			Grid.init();
+		});
 
-		    });
+		$('#movie_sort').change(function() {
+
+			var sortMethod = $(this).val(),
+				currentUrl = location.href;
+			$.ajax({
+				url: currentUrl,
+				type: "GET",
+				data: {
+					sort: sortMethod
+				},
+				dataType: "script",
+				success: function(data){
+					Grid.init();
+				}
+			});
+		});
 
 	});
 	</script>
