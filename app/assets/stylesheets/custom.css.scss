@@ -274,7 +274,7 @@ Article{
 .og-list .chapter table td {
 	text-align: left;
 	display: block;
-	width: 100%;
+	width: 640px;
 	height: 20px;
 	overflow: hidden;
 	padding-left: 9px;
@@ -658,26 +658,26 @@ padding-top: 9px;
 }
 
 .select-wrap select{
-position:relative;
-z-index:2;
-display:block;
-width:200%;/* fallback non calc support */
-width:-webkit-calc(100% + 5em);
-margin:0;
-background:transparent;
-border:0;
-outline:none;
-height: 50px;
-line-height: 50px;
+	position:relative;
+	z-index:2;
+	display:block;
+	width:200%;/* fallback non calc support */
+	width:-webkit-calc(100% + 5em);
+	margin:0;
+	background:transparent;
+	border:0;
+	outline:none;
+	height: 50px;
+	line-height: 50px;
 }
 
 .entypo-down-open-mini:before{
-content: url("list_button.png"); 
-position:absolute;
-z-index:1;
-padding-top: 10px;
-right:12px;
-right:.75rem;
+	content: url("list_button.png"); 
+	position:absolute;
+	z-index:1;
+	padding-top: 10px;
+	right:12px;
+	right:.75rem;
 }
 
 .select-wrap select option{
